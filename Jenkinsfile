@@ -13,7 +13,7 @@ pipeline {
         stage('Upload') {
             steps {
                 withAWS(region:'eu-central-1',credentials:'devops-aws-credential') {
-                s3Upload(file:'files/*', bucket:'devopstask-app-staging');
+                s3Upload(file:'files/', bucket:'devopstask-app-staging');
                 }
             }
         }
