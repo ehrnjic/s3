@@ -5,7 +5,6 @@ pipeline {
         stage('Archive') {
             steps {
                 sh '''
-                    //tar -zcvf files-${BRANCH}-${BUILD_NUMBER}.tar.gz files/
                     tar -zcvf files.tar.gz files/
                 '''
             }
