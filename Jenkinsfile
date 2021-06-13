@@ -13,9 +13,7 @@ pipeline {
         stage('Upload') {
             steps {
                 withAWS(region:'eu-central-1',credentials:'devops-aws-credential') {
-                //def identity=awsIdentity();
-                //s3Upload(file:'files.tar.gz', bucket:'devopstask-app-staging');
-                s3Upload(file:'files.tar.gz', bucket:'devopstask-app-staging', path:'tarfiles/');
+                s3Upload(file:'files/*', bucket:'devopstask-app-staging');
                 }
             }
         }
